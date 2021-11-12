@@ -524,18 +524,14 @@ class NavigationTest {
 
     private fun makeLandScapeOrientation(activityScenario: ActivityScenario<MainActivity>) {
         activityScenario.onActivity { activity ->
-            activity.setRequestedOrientation(
-                ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-            )
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
         }
         Thread.sleep(1000)
     }
 
     private fun makePortraitOrientation(activityScenario: ActivityScenario<MainActivity>) {
         mainRule.scenario.onActivity { activity ->
-            activity.setRequestedOrientation(
-                ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-            )
+            activity.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         }
         Thread.sleep(1000)
     }
